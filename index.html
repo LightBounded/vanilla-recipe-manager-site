@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/minty/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+
+  <body>
+    <div class="container border rounded p-4 mt-4">
+      <p class="h1 font-italic font-weight-bold text-primary">Recipes</p>
+      <p class="h6 font-italic font-weight-bold">From one kitchen, to yours</p>
+    </div>
+    <div class="container border rounded p-4 mt-4">
+      <form>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="text-primary" for="recipeName">Recipe Name</label>
+              <input
+                id="recipeName"
+                class="form-control"
+                type="text"
+                placeholder="Recipe Name"
+                required
+              />
+              <div id="invalidRecipeName" class="invalid-feedback">
+                Invalid recipe name.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label class="text-primary" for="instructions"
+                >Instructions</label
+              >
+              <textarea
+                name="instructions"
+                id="instructions"
+                class="form-control"
+                cols="30"
+                rows="10"
+                placeholder="Recipe instructions"
+                required
+              ></textarea>
+              <div class="invalid-feedback">
+                Please fill out the instructions.
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label class="text-primary" for="recipePicture"
+              >Recipe Picture</label
+            ><br />
+            <figure id="displayArea" class="figure"></figure>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="cookTime">Cook Time</label>
+              <input
+                id="cookTime"
+                class="form-control"
+                type="number"
+                placeholder="Cook time (min.)"
+                required
+              />
+              <div class="invalid-feedback">Invalid cook time.</div>
+            </div>
+          </div>
+          <div class="col">
+            <label for="">Recipe Picture</label>
+            <div class="custom-file">
+              <input
+                id="fileInput"
+                type="file"
+                class="custom-file-input"
+                required
+              />
+              <label id="fileName" class="custom-file-label" for="file"
+                >Choose file</label
+              >
+              <div id="invalidFile" class="invalid-feedback">
+                Please select a picture.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="btn-group">
+              <button id="submitRecipe" class="btn btn-primary" type="button">
+                Submit Recipe
+              </button>
+              <button id="newRecipe" class="btn btn-secondary" type="reset">
+                New Recipe
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="text-right">
+              <button
+                id="showRecipes"
+                class="btn btn-outline-primary"
+                type="button"
+              >
+                Show Recipes
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="container border rounded p-4 mt-4" id="tableContainer">
+      <p class="h3 text-primary">List of All Recipes</p>
+      <table class="table table-striped">
+        <thead>
+          <th scope="col">Name</th>
+          <th scope="col">Instructions</th>
+          <th scope="col">Cook Time (min)</th>
+          <th scope="col">Picture</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
